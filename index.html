@@ -1,27 +1,67 @@
-//
-const fruits = ["apple", "grapes", "watermelon", "tangerines"]
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emmy Don Bank</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .scrollbar-thin::-webkit-scrollbar {
+      width: 6px;
+    }
+    .scrollbar-thin::-webkit-scrollbar-thumb {
+      background-color: rgba(220, 38, 38, 0.6);
+      border-radius: 4px;
+    }
+  </style>
+</head>
 
-const countries = ["nigeria", "ghana", "germany"]
+<body class="min-h-screen bg-gray-50 font-sans text-gray-900">
 
-const EvenNumbers = [2,4,6,8,10]
+  <!-- Navbar -->
+  <nav class="bg-red-600 text-white px-6 py-4 shadow-md fixed w-full top-0 z-50">
+    <div class="max-w-4xl mx-auto flex justify-between items-center">
+      <div class="flex items-center space-x-2">
+        <img src="logo.png" alt="Emmy Logo" class="w-8 h-8">
+        <span class="text-xl font-bold">EMMY DON BANK</span>
+      </div>
+      <button class="bg-white text-red-600 px-4 py-1 rounded-full hover:bg-gray-100 transition">Sign Out</button>
+    </div>
+  </nav>
 
-const courses = ["software engineering", "cybersecurity", "data analysis"]
+  <main class="pt-20 pb-10 px-4">
+    <div class="max-w-4xl mx-auto space-y-8">
 
-const animals = ["lion", "tiger", "zebra"]
+      <!-- Greeting & Balance Card -->
+      <section class="bg-white shadow-lg rounded-2xl p-6 text-center">
+        <h2 id="greetings" class="text-2xl font-semibold text-red-600"></h2>
+        <div class="mt-4 bg-red-50 p-6 rounded-xl">
+          <p class="text-sm text-gray-500 uppercase tracking-wide">Available Balance</p>
+          <div id="balance-bubble" class="text-4xl font-bold text-red-700 mt-2">$0</div>
+        </div>
+      </section>
 
-const departments = [
+      <!-- Actions -->
+      <section class="flex justify-center space-x-4">
+        <button id="addBtn" class="flex-1 bg-green-500 hover:bg-green-600 text-white py-3 rounded-xl font-semibold shadow">Deposit</button>
+        <button id="withdrawBtn" class="flex-1 bg-red-500 hover:bg-red-600 text-white py-3 rounded-xl font-semibold shadow">Withdraw</button>
+      </section>
 
-{id: 1,
-    departmentname: "Computer science"
-}
-,{id: 2,
-    departmentname: "mass communication"
-}
-]
+      <!-- Transaction History -->
+      <section class="bg-white shadow-lg rounded-2xl p-6">
+        <h3 class="text-lg font-bold text-red-600 mb-4">Recent Activity</h3>
+        <div id="history-list" class="space-y-2 max-h-60 overflow-y-auto scrollbar-thin">
+          <!-- transaction items go here -->
+        </div>
+      </section>
 
+    </div>
+  </main>
 
-const datatype = true;
-const datatype2 = "true"
+  <footer class="text-center text-sm text-gray-500 mt-10 mb-4">
+    © 2025 Emmy Don Bank. All rights reserved.
+  </footer>
 
-console.log(`This is ${datatype} and ${datatype2}`)
-
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
